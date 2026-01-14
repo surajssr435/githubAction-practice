@@ -9,12 +9,14 @@ jobs:
           echo "Hello, World! buiding code..."
   testing:
     runs-on: ubuntu-latest
+    needs: building
     steps:
       - name: run shell commands
         run: |
           echo "Hello, World! testing code..."
   deploying:
     runs-on: ubuntu-latest
+    needs: testing
     steps:
       - name: run shell commands
         run: |
